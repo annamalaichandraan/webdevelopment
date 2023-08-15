@@ -1,117 +1,63 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>landing page</title>
-    <style>
-        *{
-            box-sizing: border-box;
-        }
-        body{
-            margin: 0;
-            background:#087e8b;
-        }
-        nav{
-            background:#0b3954;
-            width:100%;
-            overflow:auto
-        }
-        ul{
-            margin:0;
-            padding:0;
-            list-style: none;
-             
-        }
-        li{
-            float:left;
-        }
-        nav a{
-            width:120px;
-            display:block;
-            text-decoration: none;
-            text-align: center;
-            background:#0b3954;
-             font-size: 17px;
-             color: white;
-             padding: 20px 10px;
-             font-family: 'Times New Roman', Times, serif;
-        }
-        nav a:hover{
-            background: skyblue;
-            color:black
-        } 
-        .container{
-            max-width: 1200px;
-            margin: auto;
-            background: #f2f2f2;
-            overflow :auto
-        }
-        .gallery{
-            margin:5px;
-            border:1px solid #ccc;
-            float:left;
-            width:390px;
-        }
-        .gallery img{
-            width:100%;
-            height: auto;
-
-        }
-        .description{
-            text-align:left;
-            padding:15px;
-        }
-        .fruitgallery{
-            size:initial;
-            color: #f2f2f2;
-        }
-         
-    </style>
+	<title>Calculator</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="calc.css">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">  
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js"
+  			integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  			crossorigin="anonymous">
+  	</script>
 </head>
 <body>
- <nav>
-    <ul>
-        <li><a href="#"> HOME</a></li>
-        <li><a href="#"> NEWS</a></li>
-        <li><a href="#"> DOWNLOAD</a></li>
-        <li><a href="#"> GALLERY</a></li>
-        <li><a href="#"> CONTACT</a></li>
-        
-    </ul>
- </nav>
- <div class="fruitgallery">
-    <div align ="center">FRUIT GALLERY</div>
- </div>
-    
- <div class ="container">
-    <div class ="gallery">
-        <img src="apple(1).jpg">
-        <div class ="descrption">An apple is a round, edible fruit produced by an apple tree (Malus domestica). Apple trees are cultivated worldwide and are the most widely grown species in the genus Malus. The tree originated in Central Asia, where its wild ancestor, Malus sieversii, is still found. Apples have been grown for thousands of years in Asia and Europe and were introduced to North America by European colonists. Apples have religious and mythological significance in many cultures, including Norse, Greek, and European Christian tradition.</div>
-    </div>
-    <div class ="gallery">
-        <img src="bana(1).jpg">
-        <div class ="descrption">A banana is an elongated, edible fruit – botanically a berry – produced by several kinds of large herbaceous flowering plants in the genus Musa. In some countries, bananas used for cooking may be called "plantains", distinguishing them from dessert bananas. The fruit is variable in size, color, and firmness, but is usually elongated and curved, with soft flesh rich in starch covered with a rind, which may be green, yellow, red, purple, or brown when ripe. </div>
-    </div>
-    <div class ="gallery">
-        <img src="mango(1).jpg">
-        <div class ="descrption">A mango is an edible stone fruit produced by the tropical tree Mangifera indica. It is believed to have originated in southern Asia, particularly in eastern India, Bangladesh, and the Andaman Islands.M. indica has been cultivated in South and Southeast Asia since ancient times resulting in two types of modern mango cultivars: the "Indian type" and the "Southeast Asian type".Other species in the genus Mangifera also produce edible fruits that are also called "mangoes".</div>
-    </div>
-    <div class ="gallery">
-        <img src="pomo(1).jpg">
-        <div class ="descrption">The pomegranate (Punica granatum) is a fruit-bearing deciduous shrub in the family Lythraceae, subfamily Punicoideae, that grows between 5 and 10 m (16 and 33 ft) tall.The fruit is typically in season in the Southern Hemisphere from March to May, and in the Northern Hemisphere from September to February. As intact sarcotestas or as juice, pomegranates are used in baking, cooking, juice blends, meal garnishes, smoothies, and alcoholic beverages, such as cocktails and wine.</div>
-    </div>
-    <div class ="gallery">
-        <img src="mangoo_image.jpg">
-        <div class ="descrption">Mangosteen (Garcinia mangostana), also known as the purple mangosteen, is a tropical evergreen tree with edible fruit native to tropical lands surrounding the Indian Ocean. Its origin is uncertain due to widespread prehistoric cultivation. It grows mainly in Southeast Asia, southwest India and other tropical areas such as Colombia and Puerto Rico, where the tree has been introduced.
+	<div class="container">
+		<div class="jumbotron">
+			<h1 class="display-3">Calculator App</h1>
+			<p class="lead">MY CALCULATOR</p>
+			<hr class="my-4">
+		</div>
 
-            The fruit of the mangosteen is sweet and tangy, juicy, somewhat fibrous, with fluid-filled vesicles (like the flesh of citrus fruits), with an inedible, deep reddish-purple colored rind (exocarp) when ripe</div>
-    </div>
-    <div class ="gallery">
-        <img src="orange(1).jpg">
-        <div class ="descrption">An orange is a fruit of various citrus species in the family Rutaceae (see list of plants known as orange); it primarily refers to Citrus × sinensis,which is also called sweet orange, to distinguish it from the related Citrus × aurantium, referred to as bitter orange. The sweet orange reproduces asexually (apomixis through nucellar embryony); varieties of the sweet orange arise through mutations.[</div>
-    </div>
-     
- </div>  
+
+		<textarea id="resultArea" readonly rows="1" cols="21"></textarea>
+		<div id="opac"></div>
+		<table>
+			<tr>
+				<td></td>
+				<td></td>
+				<td><button id="clrTxt" class="btn btn-danger">C</button></td>
+				<td><button id="del" class="btn btn-default"><i class="material-icons" style="color:red">backspace</i></button></td>
+			</tr>
+
+			<tr>
+				<td><button id="num7" class="btn btn-default">7</button></td>
+				<td><button id="num8" class="btn btn-default">8</button></td>
+				<td><button id="num9" class="btn btn-default">9</button></td>
+				<td><button id="op3" class="btn btn-default">&div;</button></td>
+			</tr>
+
+			<tr>
+				<td><button id="num4" class="btn btn-default">4</button></td>
+				<td><button id="num5" class="btn btn-default">5</button></td>
+				<td><button id="num6" class="btn btn-default">6</button></td>
+				<td><button id="op2" class="btn btn-default">&times;</button></td>
+			</tr>
+
+			<tr>
+				<td><button id="num1" class="btn btn-default">1</button></td>
+				<td><button id="num2" class="btn btn-default">2</button></td>
+				<td><button id="num3" class="btn btn-default">3</button></td>
+				<td><button id="op1" class="btn btn-default">&minus;</button></td>
+			</tr>
+
+			<tr>
+				<td><button id="decp" class="btn btn-default">.</button></td>
+				<td><button id="num0" class="btn btn-default">0</button></td>
+				<td><button id="eq" class="btn btn-default">=</button></td>
+				<td><button id="op0" class="btn btn-default">&plus;</button></td>
+			</tr>
+		</table>
+	</div>
+	<script type="text/javascript" src="calc.js"></script>
 </body>
-</html>  
+</html>
